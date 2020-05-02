@@ -36,9 +36,7 @@ document.addEventListener("DOMContentLoaded", event => {
                 console.log(err)
             })
             .finally(event => {
-                setInterval(function() {
-
-                }, 200)
+                console.log("complete")
             })
     })
 })
@@ -52,5 +50,18 @@ let now_time = new Date()
 let nxt_train = null
 
 let mainObj = new Vue({
+    el: "#mainDiv",
+    data: {
+        options: [
+            { text: "小碧潭到七張", value: 0 },
+            { text: "七張到小碧潭", value: 1 }
+        ],
+        selected: null
+    },
+    methods: {
+        change_selected: function() {
+            console.log(this.selected)
+        }
+    }
 
 })
